@@ -30,7 +30,7 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter {
 
         if(responseWrapper.getContentType() != null && responseWrapper.getContentType().contains("application/json")) {
             if(responseWrapper.getContentAsByteArray().length != 0) {
-                log.info("Response Body : {}", objectMapper.readTree(requestWrapper.getContentAsByteArray()));
+                log.info("Response Body : {}", objectMapper.readTree(responseWrapper.getContentAsByteArray()));
             }
         }
     }
